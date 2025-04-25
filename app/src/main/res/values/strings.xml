@@ -1,0 +1,19 @@
+<resources>
+    <string name="seu_app">My Application</string>
+    <string name="entrar">Entrar</string>
+    <string name="login">Login</string>
+    <string name="card_3">Card 3</string>
+    <string name="ic_back">Voltar</string>
+    <string name="icon">Ícone</string>
+    <string name="button">Botão</string>
+    <string name="install_adi_icon">Texto para Install ADI Icon</string>
+    <string name="maintenance_adi_icon">Texto para Maintenance ADI Icon</string>
+    <string name="uninstall_adi_icon">Texto para Uninstall ADI Icon</string>
+    <string name="logo">Texto para Logo</string>
+    <string name="adi_icon">Texto para ADI Icon</string>
+    <string name="search_icon">Texto para Search Icon</string>
+    <string name="app_name" />
+    <string name="back_button">Voltar</string>
+
+
+</resources>

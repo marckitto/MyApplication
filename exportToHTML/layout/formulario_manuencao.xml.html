@@ -1,0 +1,156 @@
+<html>
+<head>
+<title>formulario_manuencao.xml</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #d5b778;}
+.s1 { color: #bcbec4;}
+.s2 { color: #6aab73;}
+.s3 { color: #bcbec4;}
+.s4 { color: #7a7e85;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+formulario_manuencao.xml</font>
+</center></td></tr></table>
+<pre><span class="s0">&lt;?</span><span class="s1">xml version</span><span class="s2">=&quot;1.0&quot; </span><span class="s1">encoding</span><span class="s2">=&quot;utf-8&quot;</span><span class="s0">?&gt;</span>
+<span class="s0">&lt;ScrollView</span>
+    <span class="s1">xmlns:android</span><span class="s2">=&quot;http://schemas.android.com/apk/res/android&quot;</span>
+    <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+    <span class="s1">android:layout_height</span><span class="s2">=&quot;match_parent&quot;</span>
+    <span class="s1">android:background</span><span class="s2">=&quot;@color/teal_200&quot;</span><span class="s0">&gt;</span>
+
+    <span class="s0">&lt;LinearLayout</span>
+        <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+        <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+        <span class="s1">android:orientation</span><span class="s2">=&quot;vertical&quot;</span>
+        <span class="s1">android:padding</span><span class="s2">=&quot;16dp&quot;</span><span class="s0">&gt;</span>
+
+        <span class="s4">&lt;!-- Toolbar --&gt;</span>
+        <span class="s0">&lt;androidx.appcompat.widget.Toolbar</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/toolbar&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;@android:color/white&quot;</span>
+            <span class="s1">android:theme</span><span class="s2">=&quot;@style/ThemeOverlay.AppCompat.ActionBar&quot;</span>
+            <span class="s1">android:popupTheme</span><span class="s2">=&quot;@style/ThemeOverlay.AppCompat.Light&quot;</span>
+            <span class="s1">android:elevation</span><span class="s2">=&quot;4dp&quot;</span><span class="s0">&gt;</span>
+
+            <span class="s0">&lt;ImageView</span>
+                <span class="s1">android:id</span><span class="s2">=&quot;@+id/backButton&quot;</span>
+                <span class="s1">android:layout_width</span><span class="s2">=&quot;24dp&quot;</span>
+                <span class="s1">android:layout_height</span><span class="s2">=&quot;24dp&quot;</span>
+                <span class="s1">android:layout_gravity</span><span class="s2">=&quot;center_vertical&quot;</span>
+                <span class="s1">android:src</span><span class="s2">=&quot;@drawable/ic_back&quot;</span>
+                <span class="s1">android:contentDescription</span><span class="s2">=&quot;@string/back_button&quot;</span>
+                <span class="s1">android:padding</span><span class="s2">=&quot;4dp&quot; </span><span class="s0">/&gt;</span>
+
+            <span class="s0">&lt;TextView</span>
+                <span class="s1">android:id</span><span class="s2">=&quot;@+id/toolbarTitle&quot;</span>
+                <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+                <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+                <span class="s1">android:text</span><span class="s2">=&quot;Formulário Armadilha&quot;</span>
+                <span class="s1">android:fontFamily</span><span class="s2">=&quot;sans-serif-medium&quot;</span>
+                <span class="s1">android:gravity</span><span class="s2">=&quot;center&quot;</span>
+                <span class="s1">android:textSize</span><span class="s2">=&quot;20sp&quot;</span>
+                <span class="s1">android:textColor</span><span class="s2">=&quot;@android:color/black&quot; </span><span class="s0">/&gt;</span>
+        <span class="s0">&lt;/androidx.appcompat.widget.Toolbar&gt;</span>
+
+        <span class="s4">&lt;!-- Pergunta 1 --&gt;</span>
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;A armadilha está em condições de uso?&quot;</span>
+            <span class="s1">android:textColor</span><span class="s2">=&quot;@android:color/white&quot;</span>
+            <span class="s1">android:textSize</span><span class="s2">=&quot;16sp&quot;</span>
+            <span class="s1">android:fontFamily</span><span class="s2">=&quot;sans-serif-medium&quot;</span>
+            <span class="s1">android:layout_marginTop</span><span class="s2">=&quot;16dp&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;Spinner</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/conditionSpinner&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;@android:color/white&quot;</span>
+            <span class="s1">android:padding</span><span class="s2">=&quot;8dp&quot;</span>
+            <span class="s1">android:layout_marginTop</span><span class="s2">=&quot;8dp&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s4">&lt;!-- Pergunta 2 --&gt;</span>
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Foi realizada manutenção da Armadilha?&quot;</span>
+            <span class="s1">android:textColor</span><span class="s2">=&quot;@android:color/white&quot;</span>
+            <span class="s1">android:textSize</span><span class="s2">=&quot;16sp&quot;</span>
+            <span class="s1">android:fontFamily</span><span class="s2">=&quot;sans-serif-medium&quot;</span>
+            <span class="s1">android:layout_marginTop</span><span class="s2">=&quot;16dp&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;Spinner</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/maintenanceSpinner&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;@android:color/white&quot;</span>
+            <span class="s1">android:padding</span><span class="s2">=&quot;8dp&quot;</span>
+            <span class="s1">android:layout_marginTop</span><span class="s2">=&quot;8dp&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s4">&lt;!-- Pergunta 3 --&gt;</span>
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Foi encontrada Larva ou Pupa na armadilha?&quot;</span>
+            <span class="s1">android:textColor</span><span class="s2">=&quot;@android:color/white&quot;</span>
+            <span class="s1">android:textSize</span><span class="s2">=&quot;16sp&quot;</span>
+            <span class="s1">android:fontFamily</span><span class="s2">=&quot;sans-serif-medium&quot;</span>
+            <span class="s1">android:layout_marginTop</span><span class="s2">=&quot;16dp&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;Spinner</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/larvaSpinner&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;@android:color/white&quot;</span>
+            <span class="s1">android:padding</span><span class="s2">=&quot;8dp&quot;</span>
+            <span class="s1">android:layout_marginTop</span><span class="s2">=&quot;8dp&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s4">&lt;!-- Pergunta 5 --&gt;</span>
+        <span class="s0">&lt;TextView</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Foi gerada amostra?&quot;</span>
+            <span class="s1">android:textColor</span><span class="s2">=&quot;@android:color/white&quot;</span>
+            <span class="s1">android:textSize</span><span class="s2">=&quot;16sp&quot;</span>
+            <span class="s1">android:fontFamily</span><span class="s2">=&quot;sans-serif-medium&quot;</span>
+            <span class="s1">android:layout_marginTop</span><span class="s2">=&quot;16dp&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s0">&lt;Spinner</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/sampleSpinner&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:background</span><span class="s2">=&quot;@android:color/white&quot;</span>
+            <span class="s1">android:padding</span><span class="s2">=&quot;8dp&quot;</span>
+            <span class="s1">android:layout_marginTop</span><span class="s2">=&quot;8dp&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s4">&lt;!-- Botão Monitorar --&gt;</span>
+        <span class="s0">&lt;Button</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/monitorSameTypeButton&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:backgroundTint</span><span class="s2">=&quot;@color/teal_700&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;+ Monitorar armadilha do mesmo tipo&quot;</span>
+            <span class="s1">android:textColor</span><span class="s2">=&quot;@android:color/white&quot;</span>
+            <span class="s1">android:layout_marginTop</span><span class="s2">=&quot;16dp&quot; </span><span class="s0">/&gt;</span>
+
+        <span class="s4">&lt;!-- Botão Finalizar --&gt;</span>
+        <span class="s0">&lt;Button</span>
+            <span class="s1">android:id</span><span class="s2">=&quot;@+id/finishButton&quot;</span>
+            <span class="s1">android:layout_width</span><span class="s2">=&quot;match_parent&quot;</span>
+            <span class="s1">android:layout_height</span><span class="s2">=&quot;wrap_content&quot;</span>
+            <span class="s1">android:backgroundTint</span><span class="s2">=&quot;@color/teal_700&quot;</span>
+            <span class="s1">android:text</span><span class="s2">=&quot;Finalizar&quot;</span>
+            <span class="s1">android:textColor</span><span class="s2">=&quot;@android:color/white&quot;</span>
+            <span class="s1">android:layout_marginTop</span><span class="s2">=&quot;16dp&quot; </span><span class="s0">/&gt;</span>
+    <span class="s0">&lt;/LinearLayout&gt;</span>
+<span class="s0">&lt;/ScrollView&gt;</span></pre>
+</body>
+</html>

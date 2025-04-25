@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="houseNumberEditText" type="id" />
+    <item name="complementEditText" type="id" />
+    <item name="establishmentEditText" type="id" />
+    <item name="sequentialEditText" type="id" />
+    <item name="propertyTypeSpinner" type="id" />
+    <item name="locationTextView" type="id" />
+    <item name="statusTextView" type="id" />
+</resources>

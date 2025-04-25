@@ -1,0 +1,136 @@
+<html>
+<head>
+<title>MainActivity.kt</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #cf8e6d;}
+.s1 { color: #bcbec4;}
+.s2 { color: #bcbec4;}
+.s3 { color: #7a7e85;}
+.s4 { color: #6aab73;}
+</style>
+</head>
+<body bgcolor="#1e1f22">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+MainActivity.kt</font>
+</center></td></tr></table>
+<pre><span class="s0">package </span><span class="s1">com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">seuapp</span>
+
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">os</span><span class="s2">.</span><span class="s1">Bundle</span>
+<span class="s1">import android</span><span class="s2">.</span><span class="s1">widget</span><span class="s2">.*</span>
+<span class="s1">import androidx</span><span class="s2">.</span><span class="s1">appcompat</span><span class="s2">.</span><span class="s1">app</span><span class="s2">.</span><span class="s1">AppCompatActivity</span>
+<span class="s1">import com</span><span class="s2">.</span><span class="s1">example</span><span class="s2">.</span><span class="s1">seuapp</span><span class="s2">.</span><span class="s1">R</span>
+
+
+<span class="s0">class </span><span class="s1">FormularioActivity : AppCompatActivity</span><span class="s2">() {</span>
+
+    <span class="s1">override </span><span class="s0">fun </span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState: Bundle?</span><span class="s2">) {</span>
+        <span class="s0">super</span><span class="s2">.</span><span class="s1">onCreate</span><span class="s2">(</span><span class="s1">savedInstanceState</span><span class="s2">)</span>
+        <span class="s1">setContentView</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">activity_formulario</span><span class="s2">)</span>
+
+        <span class="s3">// Configuração da Toolbar</span>
+        <span class="s0">val </span><span class="s1">backButton: ImageView </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">backButton</span><span class="s2">)</span>
+        <span class="s1">backButton</span><span class="s2">.</span><span class="s1">setOnClickListener </span><span class="s2">{</span>
+            <span class="s1">finish</span><span class="s2">() </span><span class="s3">// Voltar para a tela anterior</span>
+        <span class="s2">}</span>
+
+        <span class="s3">// Configuração do Spinner (Situação da Visita)</span>
+        <span class="s0">val </span><span class="s1">visitStatusSpinner: Spinner </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">visitStatusSpinner</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">visitStatusOptions </span><span class="s2">= </span><span class="s1">arrayOf</span><span class="s2">(</span><span class="s4">&quot;Trabalhado&quot;</span><span class="s2">, </span><span class="s4">&quot;Não Trabalhado&quot;</span><span class="s2">, </span><span class="s4">&quot;Em Progresso&quot;</span><span class="s2">)</span>
+        <span class="s1">visitStatusSpinner</span><span class="s2">.</span><span class="s1">adapter </span><span class="s2">= </span><span class="s1">ArrayAdapter</span><span class="s2">(</span>
+            <span class="s0">this</span><span class="s2">,</span>
+            <span class="s1">android</span><span class="s2">.</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">simple_spinner_dropdown_item</span><span class="s2">,</span>
+            <span class="s1">visitStatusOptions</span>
+        <span class="s2">)</span>
+
+        <span class="s3">// Botão &quot;Abrir Dados do Responsável&quot;</span>
+        <span class="s0">val </span><span class="s1">openResponsibleDataButton: Button </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">openResponsibleDataButton</span><span class="s2">)</span>
+        <span class="s1">openResponsibleDataButton</span><span class="s2">.</span><span class="s1">setOnClickListener </span><span class="s2">{</span>
+            <span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s4">&quot;Abrindo dados do responsável...&quot;</span><span class="s2">, </span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span><span class="s2">).</span><span class="s1">show</span><span class="s2">()</span>
+        <span class="s2">}</span>
+
+        <span class="s3">// Campo &quot;Número da Armadilha&quot; e botão &quot;Escanear QRCode&quot;</span>
+        <span class="s0">val </span><span class="s1">trapNumberEditText: EditText </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">trapNumberEditText</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">scanQRCodeButton: Button </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">scanQRCodeButton</span><span class="s2">)</span>
+        <span class="s1">scanQRCodeButton</span><span class="s2">.</span><span class="s1">setOnClickListener </span><span class="s2">{</span>
+            <span class="s0">val </span><span class="s1">trapNumber </span><span class="s2">= </span><span class="s1">trapNumberEditText</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">()</span>
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">trapNumber</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">()) {</span>
+                <span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s4">&quot;Por favor, insira o número da armadilha.&quot;</span><span class="s2">, </span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span><span class="s2">).</span><span class="s1">show</span><span class="s2">()</span>
+            <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                <span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s4">&quot;Escaneando QRCode para armadilha </span><span class="s0">$</span><span class="s1">trapNumber</span><span class="s4">...&quot;</span><span class="s2">, </span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span><span class="s2">).</span><span class="s1">show</span><span class="s2">()</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+
+        <span class="s3">// Configuração do Spinner para Pergunta 2 (Manutenção da Armadilha)</span>
+        <span class="s0">val </span><span class="s1">maintenanceSpinner: Spinner </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">maintenanceSpinner</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">maintenanceOptions </span><span class="s2">= </span><span class="s1">arrayOf</span><span class="s2">(</span><span class="s4">&quot;Selecionar&quot;</span><span class="s2">, </span><span class="s4">&quot;Sim&quot;</span><span class="s2">, </span><span class="s4">&quot;Não&quot;</span><span class="s2">)</span>
+        <span class="s1">maintenanceSpinner</span><span class="s2">.</span><span class="s1">adapter </span><span class="s2">= </span><span class="s1">ArrayAdapter</span><span class="s2">(</span>
+            <span class="s0">this</span><span class="s2">,</span>
+            <span class="s1">android</span><span class="s2">.</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">simple_spinner_dropdown_item</span><span class="s2">,</span>
+            <span class="s1">maintenanceOptions</span>
+        <span class="s2">)</span>
+
+        <span class="s3">// Configuração do Spinner para Pergunta 3 (Larva ou Pupa na Armadilha)</span>
+        <span class="s0">val </span><span class="s1">larvaSpinner: Spinner </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">larvaSpinner</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">larvaOptions </span><span class="s2">= </span><span class="s1">arrayOf</span><span class="s2">(</span><span class="s4">&quot;Selecionar&quot;</span><span class="s2">, </span><span class="s4">&quot;Sim&quot;</span><span class="s2">, </span><span class="s4">&quot;Não&quot;</span><span class="s2">)</span>
+        <span class="s1">larvaSpinner</span><span class="s2">.</span><span class="s1">adapter </span><span class="s2">= </span><span class="s1">ArrayAdapter</span><span class="s2">(</span>
+            <span class="s0">this</span><span class="s2">,</span>
+            <span class="s1">android</span><span class="s2">.</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">simple_spinner_dropdown_item</span><span class="s2">,</span>
+            <span class="s1">larvaOptions</span>
+        <span class="s2">)</span>
+
+        <span class="s3">// Configuração do Spinner para Pergunta 5 (Gerada Amostra)</span>
+        <span class="s0">val </span><span class="s1">sampleSpinner: Spinner </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">sampleSpinner</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">sampleOptions </span><span class="s2">= </span><span class="s1">arrayOf</span><span class="s2">(</span><span class="s4">&quot;Selecionar&quot;</span><span class="s2">, </span><span class="s4">&quot;Sim&quot;</span><span class="s2">, </span><span class="s4">&quot;Não&quot;</span><span class="s2">)</span>
+        <span class="s1">sampleSpinner</span><span class="s2">.</span><span class="s1">adapter </span><span class="s2">= </span><span class="s1">ArrayAdapter</span><span class="s2">(</span>
+            <span class="s0">this</span><span class="s2">,</span>
+            <span class="s1">android</span><span class="s2">.</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">simple_spinner_dropdown_item</span><span class="s2">,</span>
+            <span class="s1">sampleOptions</span>
+        <span class="s2">)</span>
+
+        <span class="s3">// Campos do formulário</span>
+        <span class="s0">val </span><span class="s1">blockEditText: EditText </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">blockEditText</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">cepEditText: EditText </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">cepEditText</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">streetEditText: EditText </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">streetEditText</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">houseNumberEditText: EditText </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">houseNumberEditText</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">propertyTypeSpinner: Spinner </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">propertyTypeSpinner</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">establishmentEditText: EditText </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">establishmentEditText</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">complementEditText: EditText </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">complementEditText</span><span class="s2">)</span>
+        <span class="s0">val </span><span class="s1">sequentialEditText: EditText </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">sequentialEditText</span><span class="s2">)</span>
+
+        <span class="s3">// Configuração do Spinner &quot;Tipo de Imóvel&quot;</span>
+        <span class="s0">val </span><span class="s1">propertyTypeOptions </span><span class="s2">= </span><span class="s1">arrayOf</span><span class="s2">(</span><span class="s4">&quot;Residencial&quot;</span><span class="s2">, </span><span class="s4">&quot;Comercial&quot;</span><span class="s2">, </span><span class="s4">&quot;Industrial&quot;</span><span class="s2">, </span><span class="s4">&quot;Outro&quot;</span><span class="s2">)</span>
+        <span class="s1">propertyTypeSpinner</span><span class="s2">.</span><span class="s1">adapter </span><span class="s2">= </span><span class="s1">ArrayAdapter</span><span class="s2">(</span>
+            <span class="s0">this</span><span class="s2">,</span>
+            <span class="s1">android</span><span class="s2">.</span><span class="s1">R</span><span class="s2">.</span><span class="s1">layout</span><span class="s2">.</span><span class="s1">simple_spinner_dropdown_item</span><span class="s2">,</span>
+            <span class="s1">propertyTypeOptions</span>
+        <span class="s2">)</span>
+
+        <span class="s3">// Botão &quot;Avançar&quot;</span>
+        <span class="s0">val </span><span class="s1">submitButton: Button </span><span class="s2">= </span><span class="s1">findViewById</span><span class="s2">(</span><span class="s1">R</span><span class="s2">.</span><span class="s1">id</span><span class="s2">.</span><span class="s1">submitButton</span><span class="s2">)</span>
+        <span class="s1">submitButton</span><span class="s2">.</span><span class="s1">setOnClickListener </span><span class="s2">{</span>
+            <span class="s3">// Validação dos campos</span>
+            <span class="s0">val </span><span class="s1">block </span><span class="s2">= </span><span class="s1">blockEditText</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">()</span>
+            <span class="s0">val </span><span class="s1">cep </span><span class="s2">= </span><span class="s1">cepEditText</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">()</span>
+            <span class="s0">val </span><span class="s1">street </span><span class="s2">= </span><span class="s1">streetEditText</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">()</span>
+            <span class="s0">val </span><span class="s1">houseNumber </span><span class="s2">= </span><span class="s1">houseNumberEditText</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">()</span>
+            <span class="s0">val </span><span class="s1">propertyType </span><span class="s2">= </span><span class="s1">propertyTypeSpinner</span><span class="s2">.</span><span class="s1">selectedItem</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">()</span>
+            <span class="s0">val </span><span class="s1">establishment </span><span class="s2">= </span><span class="s1">establishmentEditText</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">()</span>
+            <span class="s0">val </span><span class="s1">complement </span><span class="s2">= </span><span class="s1">complementEditText</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">()</span>
+            <span class="s0">val </span><span class="s1">sequential </span><span class="s2">= </span><span class="s1">sequentialEditText</span><span class="s2">.</span><span class="s1">text</span><span class="s2">.</span><span class="s1">toString</span><span class="s2">()</span>
+
+            <span class="s0">if </span><span class="s2">(</span><span class="s1">block</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">() || </span><span class="s1">cep</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">() || </span><span class="s1">street</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">() || </span><span class="s1">houseNumber</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">() ||</span>
+                <span class="s1">establishment</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">() || </span><span class="s1">complement</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">() || </span><span class="s1">sequential</span><span class="s2">.</span><span class="s1">isEmpty</span><span class="s2">()</span>
+            <span class="s2">) {</span>
+                <span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s4">&quot;Por favor, preencha todos os campos.&quot;</span><span class="s2">, </span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span><span class="s2">).</span><span class="s1">show</span><span class="s2">()</span>
+            <span class="s2">} </span><span class="s0">else </span><span class="s2">{</span>
+                <span class="s1">Toast</span><span class="s2">.</span><span class="s1">makeText</span><span class="s2">(</span><span class="s0">this</span><span class="s2">, </span><span class="s4">&quot;Dados enviados com sucesso!&quot;</span><span class="s2">, </span><span class="s1">Toast</span><span class="s2">.</span><span class="s1">LENGTH_SHORT</span><span class="s2">).</span><span class="s1">show</span><span class="s2">()</span>
+                <span class="s3">// Aqui você pode enviar os dados para o servidor ou abrir outra tela</span>
+            <span class="s2">}</span>
+        <span class="s2">}</span>
+    <span class="s2">}</span>
+<span class="s2">}</span></pre>
+</body>
+</html>
